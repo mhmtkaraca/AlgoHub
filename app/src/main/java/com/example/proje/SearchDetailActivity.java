@@ -118,9 +118,10 @@ public class SearchDetailActivity extends AppCompatActivity {
             switch (searchId) {
                 case 1: case 2: case 3: {
                     String[] parts = dataInput.split(",");
-                    int[] arr = new int[parts.length];
-                    for (int i = 0; i < parts.length; i++) arr[i] = Integer.parseInt(parts[i].trim());
-                    int target = Integer.parseInt(targetInput);
+                    double[] arr = new double[parts.length];
+                    for (int i = 0; i < parts.length; i++)
+                        arr[i] = Double.parseDouble(parts[i].trim().replace(",", "."));
+                    double target = Double.parseDouble(targetInput.trim().replace(",", "."));
                     if (searchId == 1) result = linearSearch(arr, target);
                     else if (searchId == 2) result = binarySearch(arr, target);
                     else result = interpolationSearch(arr, target);
@@ -148,13 +149,13 @@ public class SearchDetailActivity extends AppCompatActivity {
 
     // --- Dizi Aramaları ---
 
-    private String linearSearch(int[] arr, int target) {
+    private String linearSearch(double[] arr, double target) {
         for (int i = 0; i < arr.length; i++)
             if (arr[i] == target) return "Bulundu! İndis: " + i;
         return "Bulunamadı.";
     }
 
-    private String binarySearch(int[] arr, int target) {
+    private String binarySearch(double[] arr, double target) {
         Arrays.sort(arr);
         int low = 0, high = arr.length - 1;
         while (low <= high) {
@@ -165,13 +166,13 @@ public class SearchDetailActivity extends AppCompatActivity {
         return "Bulunamadı.";
     }
 
-    private String interpolationSearch(int[] arr, int target) {
+    private String interpolationSearch(double[] arr, double target) {
         Arrays.sort(arr);
         int low = 0, high = arr.length - 1;
         while (low <= high && target >= arr[low] && target <= arr[high]) {
             if (low == high) return arr[low] == target ? "Bulundu! İndis: " + low : "Bulunamadı.";
             if (arr[high] == arr[low]) return arr[low] == target ? "Bulundu! İndis: " + low : "Bulunamadı.";
-            int pos = low + (((high - low) / (arr[high] - arr[low])) * (target - arr[low]));
+            int pos = (int)(low + ((double)(high - low) / (arr[high] - arr[low])) * (target - arr[low]));
             if (pos < low || pos > high) break;
             if (arr[pos] == target) return "Bulundu! İndis: " + pos;
             if (arr[pos] < target) low = pos + 1; else high = pos - 1;
