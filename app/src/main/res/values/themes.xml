@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MaterialComponents kullanarak hem tasarımın düzgün görünmesini sağlıyoruz hem de çakışmaları önlüyoruz -->
+    <style name="Theme.Proje" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Status bar (saat olan kısım) rengi -->
+        <item name="android:statusBarColor">#E65100</item>
+        <item name="colorPrimary">#FF8100</item>
+        <item name="colorPrimaryDark">#E65100</item>
+        <item name="colorAccent">#FFB594</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+    </style>
+</resources>

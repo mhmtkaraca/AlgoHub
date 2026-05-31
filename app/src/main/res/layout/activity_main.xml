@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Saatin olduğu yer için koyu turuncu bar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#E65100" />
+
+    <!-- İstediğiniz turuncu renkli bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF8100"
+        android:elevation="4dp"
+        app:titleTextColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="ANA MENÜ"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="AD SOYAD: SELEN BENLİ"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="16dp"
+        android:text="ÖĞRENCİ NO: 202413171079"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="16dp"
+        android:text="DERSE KAYITLI OLDUĞU ÖĞRETİM GRUBU: 1. ÖĞRETİM"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <!-- Orta Kısım İçin Şekil/Logo Alanı -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="75dp"
+            app:cardElevation="8dp"
+            app:strokeColor="#FF8100"
+            app:strokeWidth="4dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+                android:src="@android:drawable/ic_menu_sort_alphabetically"
+                android:contentDescription="Logo"
+                app:tint="#874200" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="AlgoHub"
+            android:textColor="#874200"
+            android:textSize="28sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <!-- Butonlar Alt Kısım -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <Button
+            android:id="@+id/btnAsama1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="1-) Sayı Grubu Algoritmalar (AŞAMA 1)"
+            android:textAllCaps="false"
+            android:backgroundTint="#874200"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnAsama2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="2-) Sıralama Algoritmaları (AŞAMA 2)"
+            android:textAllCaps="false"
+            android:backgroundTint="#874200"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnAsama3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="3-) Arama Algoritmaları (AŞAMA 3)"
+            android:textAllCaps="false"
+            android:backgroundTint="#874200"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</LinearLayout>
